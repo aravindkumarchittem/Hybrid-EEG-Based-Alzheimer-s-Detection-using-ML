@@ -30,20 +30,19 @@ data/ds004504/derivatives/sub-001/eeg/sub-001_task-eyesclosed_eeg.set
 
 
 📂 Folder Structure
-Hybrid-Alzheimer-Detection/
-├── data/ds004504/            ← Raw EEG dataset
-├── data/processed_spikes/    ← Encoded .npy + labels.csv
-├── encode.py                 ← Preprocess & encode EEG
-├── dataset.py                ← PyTorch dataset loader
-├── model.py                  ← 2D CNN architecture
-├── train.py                  ← Model training
-├── evaluate.py               ← Model evaluation
-├── predict.py                ← Final predictions
-├── brian2_simulation.py      ← LIF neuron simulation for spike validation
-├── data_loader.py            ← EEG file loader helper
-├── run_pipeline.py           ← Test single-subject pipeline (visual check)
-├── process_full_dataset.py   ← Automates processing for all subjects
-└── README.md
+File / Folder	Description
+data/ds004504/	Raw EEG dataset downloaded from OpenNeuro
+data/processed_spikes/	Encoded .npy spike files and labels.csv
+encode.py	Preprocesses and encodes EEG data into spike format
+dataset.py	Custom PyTorch dataset loader for spike data
+model.py	Defines the 2D CNN architecture
+train.py	Trains the CNN model and saves best checkpoint
+evaluate.py	Evaluates the trained model using metrics (Accuracy, Precision, Recall)
+predict.py	Generates final Alzheimer’s/Healthy predictions
+brian2_simulation.py	Simulates Leaky Integrate-and-Fire neuron for spike validation
+data_loader.py	Loads individual EEG files (helper module)
+run_pipeline.py	Tests single-subject pipeline and visualizes EEG → spike conversion
+process_full_dataset.py	Automates spike encoding for all subjects (creates .npy + labels.csv)
 
 
 
