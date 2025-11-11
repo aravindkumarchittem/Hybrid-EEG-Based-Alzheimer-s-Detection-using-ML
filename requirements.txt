@@ -1,0 +1,13 @@
+# mne
+# numpy
+# scipy
+# matplotlib
+# pandas
+
+mne
+numpy
+pandas
+torch
+matplotlib
+scikit-learn
+tqdm
