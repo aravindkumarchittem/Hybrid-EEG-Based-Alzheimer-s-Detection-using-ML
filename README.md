@@ -39,6 +39,10 @@ Hybrid-Alzheimer-Detection/
 ├── train.py                  ← Model training
 ├── evaluate.py               ← Model evaluation
 ├── predict.py                ← Final predictions
+├── brian2_simulation.py      ← LIF neuron simulation for spike validation
+├── data_loader.py            ← EEG file loader helper
+├── run_pipeline.py           ← Test single-subject pipeline (visual check)
+├── process_full_dataset.py   ← Automates processing for all subjects
 └── README.md
 
 
@@ -86,6 +90,18 @@ python encode.py      # Convert EEG → spike data
 python train.py       # Train CNN model
 python evaluate.py    # Evaluate metrics
 python predict.py     # Get Alzheimer’s/Healthy prediction
+
+🧩 Additional Testing Scripts
+
+These scripts are not required for running the main pipeline but are useful for testing, debugging, or demonstration:
+
+Script	Purpose
+data_loader.py	Loads individual EEG files for a given subject (helper function).
+run_pipeline.py	Runs the full preprocessing → encoding pipeline on a single subject and visualizes EEG vs spike raster plots.
+process_full_dataset.py	Automates spike encoding for all subjects (creates .npy files + labels.csv).
+brian2_simulation.py	Simulates a biological Leaky Integrate-and-Fire (LIF) neuron using the encoded spike data to validate spike behavior.
+
+These were used during pipeline testing and verification, ensuring correctness before the final CNN integration.
 
 
 📊 Performance Summary
